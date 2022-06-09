@@ -1,4 +1,6 @@
-package com.tsi.amirzan.project;
+package com.tsi.amirzan.project.service;
+
+import com.tsi.amirzan.project.entity.Actor;
 
 import java.util.List;
 

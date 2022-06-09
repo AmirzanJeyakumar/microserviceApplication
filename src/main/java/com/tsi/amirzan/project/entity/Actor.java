@@ -1,4 +1,4 @@
-package com.tsi.amirzan.project;
+package com.tsi.amirzan.project.entity;
 
 
 import lombok.AllArgsConstructor;

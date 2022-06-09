@@ -1,7 +1,9 @@
-package com.tsi.amirzan.project;
+package com.tsi.amirzan.project.service;
 
 import java.util.List;
 
+import com.tsi.amirzan.project.entity.Actor;
+import com.tsi.amirzan.project.service.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

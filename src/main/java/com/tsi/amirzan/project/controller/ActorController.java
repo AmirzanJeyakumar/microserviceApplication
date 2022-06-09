@@ -1,16 +1,11 @@
-package com.tsi.amirzan.project;
-import com.tsi.amirzan.project.ActorService;
-import com.tsi.amirzan.project.Actor;
+package com.tsi.amirzan.project.controller;
 import java.util.List;
 
+import com.tsi.amirzan.project.entity.Actor;
+import com.tsi.amirzan.project.service.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 public class ActorController {
