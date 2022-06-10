@@ -18,7 +18,7 @@ public class actorsStepsDef {
     }
     @Then("I receive the list of actors")
     public void i_receive_the_list_of_actors() {
-        // Write code here that turns the phrase above into concrete actions
+
         throw new io.cucumber.java.PendingException();
     }
 }
