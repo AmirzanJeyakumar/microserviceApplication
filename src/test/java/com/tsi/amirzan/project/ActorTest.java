@@ -14,4 +14,8 @@ public class ActorTest {
         Assertions.assertEquals(1, testActor.getActor_id(),"ID not found");
     }
 
+    public  void testSetActor_id(){
+
+    }
+
 }
