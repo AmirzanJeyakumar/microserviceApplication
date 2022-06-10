@@ -13,6 +13,13 @@ public class ActorController {
         @Autowired
         private ActorService actorService;
 
+
+        public ActorController(ActorService actorService) {
+
+            this.actorService = actorService;
+        }
+
+
         @GetMapping("/actor")
         public List<Actor> findAll() {
             return actorService.findAll();
@@ -25,7 +32,7 @@ public class ActorController {
 
         @DeleteMapping("/actor/{actor_id}")
         public String deleteById(@PathVariable int actor_id) {
-            return actorService.deleteById(actor_id) + " Actor(s) delete from the database";
+            return actorService.deleteById(actor_id) + " Actor(s) deleted from the database";
         }
 
         @PostMapping("/actor")
