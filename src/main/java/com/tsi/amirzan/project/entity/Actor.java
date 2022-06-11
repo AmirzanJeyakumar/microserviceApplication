@@ -11,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Actor {
+
     private int actor_id;
     private String first_name;
     private String last_name;
