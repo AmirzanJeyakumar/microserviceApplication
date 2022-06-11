@@ -38,6 +38,6 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     public int update(Film film, int film_id) {
-        return jdbcTemplate.update("UPDATE film SET title = ?, description = ?, release_year = ?, length = ?, rating = ? ,WHERE film_id = ?", new Object[] {film.getTitle(),film.getDescription(),film.getRelease_year(),film.getLength(),film.getRating(), film_id});
+        return jdbcTemplate.update("UPDATE film SET title = ?, description = ?, release_year = ?, length = ?, rating = ? WHERE film_id = ?", new Object[] {film.getTitle(),film.getDescription(),film.getRelease_year(),film.getLength(),film.getRating(), film_id});
     }
 }

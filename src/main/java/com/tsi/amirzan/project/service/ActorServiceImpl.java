@@ -38,6 +38,6 @@ public class ActorServiceImpl implements ActorService {
 
     @Override
     public int update(Actor actor, int actor_id) {
-        return jdbcTemplate.update("UPDATE actor SET first_name = ?, last_name = ?,WHERE actor_id = ?", new Object[] {actor.getFirst_name(), actor.getLast_name(), actor_id});
+        return jdbcTemplate.update("UPDATE actor SET first_name = ?, last_name = ? WHERE actor_id = ?", new Object[] {actor.getFirst_name(), actor.getLast_name(), actor_id});
     }
 }
