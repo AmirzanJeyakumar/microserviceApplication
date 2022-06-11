@@ -46,4 +46,52 @@ public class MockitoTest {
         Assertions.assertEquals(expected,actual,"The list is incorrect");
 
     }
+
+    @Test
+    public void getActorById(){
+        Actor testActor = new Actor("First","Last");
+        testActor.setActor_id(5);
+
+        when(actorService.findById(5)).thenReturn(testActor);
+        Actor expected = testActor;
+        Actor actual = actorController.findById(5);
+        Assertions.assertEquals(expected,actual,"actor not found");
+
+    }
+
+    @Test
+    public void saveActor(){
+        Actor testActor = new Actor("First","Last");
+        testActor.setActor_id(1);
+
+        when(actorService.save(testActor)).thenReturn(1);
+        String expected = "1 Actor(s) saved successfully";
+        String actual = actorController.save(testActor);
+        Assertions.assertEquals(expected,actual,"actor not saved");
+
+    }
+
+
+    @Test
+    public void deleteActor(){
+        Actor testActor = new Actor("First","Last");
+        testActor.setActor_id(1);
+
+        when(actorService.deleteById(1)).thenReturn(1);
+        String expected = "1 Actor(s) deleted from the database";
+        String actual = actorController.deleteById(1);
+        Assertions.assertEquals(expected,actual,"actor not deleted");
+    }
+
+//    @Test
+//    public void updateActor(){
+//        Actor testActor = new Actor("First","Last");
+//        testActor.setActor_id(1);
+//        Actor newActor = new Actor("a","b");
+//
+//        when(actorService.update(newActor,1)).thenReturn(1);
+//        String expected =
+//        String actual =
+//        Assertions.assertEquals(expected,actual,"actor not updated");
+//    }
 }
