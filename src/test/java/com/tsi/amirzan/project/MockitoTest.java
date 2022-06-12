@@ -65,7 +65,7 @@ public class MockitoTest {
         testActor.setActor_id(1);
 
         when(actorService.save(testActor)).thenReturn(1);
-        String expected = "1 Actor(s) saved successfully";
+        String expected = "1 Actor saved successfully";
         String actual = actorController.save(testActor);
         Assertions.assertEquals(expected,actual,"actor not saved");
 
@@ -78,20 +78,20 @@ public class MockitoTest {
         testActor.setActor_id(1);
 
         when(actorService.deleteById(1)).thenReturn(1);
-        String expected = "1 Actor(s) deleted from the database";
+        String expected = "1 Actor deleted from the database";
         String actual = actorController.deleteById(1);
         Assertions.assertEquals(expected,actual,"actor not deleted");
     }
 
-//    @Test
-//    public void updateActor(){
-//        Actor testActor = new Actor("First","Last");
-//        testActor.setActor_id(1);
-//        Actor newActor = new Actor("a","b");
-//
-//        when(actorService.update(newActor,1)).thenReturn(1);
-//        String expected =
-//        String actual =
-//        Assertions.assertEquals(expected,actual,"actor not updated");
-//    }
+    @Test
+    public void updateActor(){
+        Actor testActor = new Actor("First","Last");
+        testActor.setActor_id(1);
+        Actor newActor = new Actor("a","b");
+
+        when(actorService.update(newActor,1)).thenReturn(1);
+        String expected = "1 Actor updated successfully";
+        String actual = actorController.update(newActor,1);
+        Assertions.assertEquals(expected,actual,"actor not updated");
+    }
 }

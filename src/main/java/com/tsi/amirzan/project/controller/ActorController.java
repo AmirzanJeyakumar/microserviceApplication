@@ -32,16 +32,16 @@ public class ActorController {
 
         @DeleteMapping("/actor/{actor_id}")
         public String deleteById(@PathVariable int actor_id) {
-            return actorService.deleteById(actor_id) + " Actor(s) deleted from the database";
+            return actorService.deleteById(actor_id) + " Actor deleted from the database";
         }
 
         @PostMapping("/actor")
         public String save(@RequestBody Actor actor) {
-            return actorService.save(actor) + " Actor(s) saved successfully";
+            return actorService.save(actor) + " Actor saved successfully";
         }
 
         @PutMapping("/actor/{actor_id}")
         public String update(@RequestBody Actor actor, @PathVariable int actor_id) {
-            return actorService.update(actor, actor_id) + " Actor(s) updated successfully";
+            return actorService.update(actor, actor_id) + " Actor updated successfully";
         }
 }

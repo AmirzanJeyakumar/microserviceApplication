@@ -1,6 +1,4 @@
 package com.tsi.amirzan.project;
-
-import com.tsi.amirzan.project.entity.Actor;
 import com.tsi.amirzan.project.entity.Film;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
