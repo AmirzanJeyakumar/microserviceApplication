@@ -13,6 +13,11 @@ public class FilmController {
     @Autowired
     private FilmService filmService;
 
+    public FilmController(FilmService filmService) {
+
+        this.filmService = filmService;
+    }
+
     @GetMapping("/film")
     public List<Film> findAll() {
         return filmService.findAll();
@@ -25,16 +30,16 @@ public class FilmController {
 
     @DeleteMapping("/film/{film_id}")
     public String deleteById(@PathVariable int film_id) {
-        return filmService.deleteById(film_id) + " Film(s) delete from the database";
+        return filmService.deleteById(film_id) + " Film deleted from the database";
     }
 
     @PostMapping("/film")
     public String save(@RequestBody Film film) {
-        return filmService.save(film) + " Film(s) saved successfully";
+        return filmService.save(film) + " Film saved successfully";
     }
 
     @PutMapping("/film/{film_id}")
     public String update(@RequestBody Film film, @PathVariable int film_id) {
-        return filmService.update(film, film_id) + " Film(s) updated successfully";
+        return filmService.update(film, film_id) + " Film updated successfully";
     }
 }

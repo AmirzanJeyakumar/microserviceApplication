@@ -1,4 +1,4 @@
-package com.tsi.amirzan.project;
+package com.tsi.amirzan.project.mockito;
 
 
 import com.tsi.amirzan.project.controller.ActorController;
@@ -18,7 +18,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class MockitoTest {
+public class ActorMockitoTest {
 
     @Mock
     private ActorController actorController;
