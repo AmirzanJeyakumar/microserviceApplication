@@ -6,10 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Setter // annotation generates the setter methods //
+@Getter // annotation generates the getter methods //
+@NoArgsConstructor // generates parameterised constructor with all the fields //
+@AllArgsConstructor // generates no-arg constructor //
 public class Actor {
 
     private int actor_id;

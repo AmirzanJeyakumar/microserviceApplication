@@ -10,10 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -94,4 +92,6 @@ public class ActorMockitoTest {
         String actual = actorController.update(newActor,1);
         Assertions.assertEquals(expected,actual,"actor not updated");
     }
+
+
 }
