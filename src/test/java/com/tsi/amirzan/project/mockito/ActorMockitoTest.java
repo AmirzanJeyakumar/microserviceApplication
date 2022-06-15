@@ -4,14 +4,22 @@ package com.tsi.amirzan.project.mockito;
 import com.tsi.amirzan.project.controller.ActorController;
 import com.tsi.amirzan.project.entity.Actor;
 import com.tsi.amirzan.project.service.ActorService;
+import com.tsi.amirzan.project.service.ActorServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Matchers.anyObject;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -20,9 +28,10 @@ public class ActorMockitoTest {
 
     @Mock
     private ActorController actorController;
-
     @Mock
     private ActorService actorService;
+    @Autowired
+    JdbcTemplate jdbcTemplate;
     @BeforeEach
     void setup(){
         actorService = mock(ActorService.class);
@@ -92,6 +101,5 @@ public class ActorMockitoTest {
         String actual = actorController.update(newActor,1);
         Assertions.assertEquals(expected,actual,"actor not updated");
     }
-
 
 }

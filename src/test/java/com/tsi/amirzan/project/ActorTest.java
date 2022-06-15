@@ -2,6 +2,7 @@ package com.tsi.amirzan.project;
 import com.tsi.amirzan.project.entity.Actor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 
 public class ActorTest {
@@ -48,5 +49,4 @@ public class ActorTest {
         testActor.setLast_name("NotLast");
         Assertions.assertEquals("NotLast",testActor.getLast_name(),"last name not changed");
     }
-
 }
