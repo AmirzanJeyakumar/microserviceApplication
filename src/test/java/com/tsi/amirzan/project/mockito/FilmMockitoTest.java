@@ -1,7 +1,6 @@
 package com.tsi.amirzan.project.mockito;
 
 import com.tsi.amirzan.project.controller.FilmController;
-import com.tsi.amirzan.project.entity.Actor;
 import com.tsi.amirzan.project.entity.Film;
 import com.tsi.amirzan.project.service.FilmService;
 import org.junit.jupiter.api.Assertions;
@@ -10,10 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
@@ -47,8 +44,7 @@ public class FilmMockitoTest {
 
     @Test
     public void findFilmById(){
-        Film testFilm = new Film("qwerty","asdf",2010,3,"PG");
-        testFilm.setFilm_id(5);
+        Film testFilm = new Film(5,"qwerty","asdf",2010,3,"PG");
         when(filmService.findById(5)).thenReturn(testFilm);
         Film expected = testFilm;
         Film actual = filmController.findById(5);
@@ -57,8 +53,7 @@ public class FilmMockitoTest {
 
     @Test
     public void deleteFilmById(){
-        Film testFilm = new Film("qwerty","asdf",2010,3,"PG");
-        testFilm.setFilm_id(1);
+        Film testFilm = new Film(1,"qwerty","asdf",2010,3,"PG");
         when(filmService.deleteById(1)).thenReturn(1);
         String expected = "1 Film deleted from the database";
         String actual = filmController.deleteById(1);
@@ -67,8 +62,7 @@ public class FilmMockitoTest {
 
     @Test
     public void saveFilm(){
-        Film testFilm = new Film("qwerty","asdf",2010,3,"PG");
-        testFilm.setFilm_id(1);
+        Film testFilm = new Film(1,"qwerty","asdf",2010,3,"PG");
         when(filmService.save(testFilm)).thenReturn(1);
         String expected = "1 Film saved successfully";
         String actual = filmController.save(testFilm);
@@ -77,8 +71,7 @@ public class FilmMockitoTest {
 
     @Test
     public void updateFilm(){
-        Film testFilm = new Film("qwerty","asdf",2010,3,"PG");
-        testFilm.setFilm_id(1);
+        Film testFilm = new Film(1,"qwerty","asdf",2010,3,"PG");
         Film newFilm = new Film("ytrewq","fdsa",2020,4,"R");
         when(filmService.update(newFilm,1)).thenReturn(1);
         String expected = "1 Film updated successfully";

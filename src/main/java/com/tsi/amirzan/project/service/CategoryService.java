@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface CategoryService {
 
-    public List<Category> findAll();
+     List<Category> findAll();
 
-    public Category findById(int category_id);
+     Category findById(int category_id);
 }

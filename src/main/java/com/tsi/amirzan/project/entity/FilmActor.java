@@ -1,14 +1,12 @@
 package com.tsi.amirzan.project.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class FilmActor {
 
     private int actor_id;

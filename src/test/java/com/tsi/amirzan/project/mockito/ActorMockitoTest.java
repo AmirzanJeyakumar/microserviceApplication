@@ -4,22 +4,14 @@ package com.tsi.amirzan.project.mockito;
 import com.tsi.amirzan.project.controller.ActorController;
 import com.tsi.amirzan.project.entity.Actor;
 import com.tsi.amirzan.project.service.ActorService;
-import com.tsi.amirzan.project.service.ActorServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.ResultSetExtractor;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Matchers.anyObject;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -30,8 +22,6 @@ public class ActorMockitoTest {
     private ActorController actorController;
     @Mock
     private ActorService actorService;
-    @Autowired
-    JdbcTemplate jdbcTemplate;
     @BeforeEach
     void setup(){
         actorService = mock(ActorService.class);
@@ -44,13 +34,12 @@ public class ActorMockitoTest {
     public void getAllActors(){
 
         Actor testActor = new Actor("First","Last");
-        List<Actor> actorList = new ArrayList<Actor>();
+        List<Actor> actorList = new ArrayList<>();
         actorList.add(testActor);
 
         when(actorService.findAll()).thenReturn(actorList);
-        List<Actor> expected = actorList;
         List<Actor> actual = actorController.findAll();
-        Assertions.assertEquals(expected,actual,"The list is incorrect");
+        Assertions.assertEquals(actorList,actual,"The list is incorrect");
 
     }
 
@@ -60,9 +49,8 @@ public class ActorMockitoTest {
         testActor.setActor_id(5);
 
         when(actorService.findById(5)).thenReturn(testActor);
-        Actor expected = testActor;
         Actor actual = actorController.findById(5);
-        Assertions.assertEquals(expected,actual,"actor not found");
+        Assertions.assertEquals(testActor,actual,"actor not found");
 
     }
 

@@ -6,6 +6,7 @@ import lombok.*;
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class FilmCategory {
 
     private int film_id;

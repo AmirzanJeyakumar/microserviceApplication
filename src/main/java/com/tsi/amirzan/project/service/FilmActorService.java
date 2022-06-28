@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface FilmActorService {
 
-    public List<FilmActor> findAll();
+     List<FilmActor> findAll();
 
 }

@@ -16,12 +16,12 @@ public class ActorServiceImpl implements ActorService {
 
     @Override
     public List<Actor> findAll() {
-        return jdbcTemplate.query("SELECT * FROM actor", new BeanPropertyRowMapper<Actor>(Actor.class));
+        return jdbcTemplate.query("SELECT * FROM actor", new BeanPropertyRowMapper<>(Actor.class));
     }
 
     @Override
     public Actor findById(int actor_id) {
-        return jdbcTemplate.queryForObject("SELECT * FROM actor WHERE actor_id=?", new BeanPropertyRowMapper<Actor>(Actor.class), actor_id);
+        return jdbcTemplate.queryForObject("SELECT * FROM actor WHERE actor_id=?", new BeanPropertyRowMapper<>(Actor.class), actor_id);
     }
 
     @Override

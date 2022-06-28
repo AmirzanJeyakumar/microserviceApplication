@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface FilmCategoryService {
 
-    public List<FilmCategory> findAll();
+     List<FilmCategory> findAll();
 }

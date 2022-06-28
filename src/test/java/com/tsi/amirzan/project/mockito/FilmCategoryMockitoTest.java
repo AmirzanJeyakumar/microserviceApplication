@@ -36,13 +36,12 @@ public class FilmCategoryMockitoTest {
     public void getAllFilmCategory(){
 
         FilmCategory testFilmCategory = new FilmCategory(1,1);
-        List<FilmCategory> filmCategoryList = new ArrayList<FilmCategory>();
+        List<FilmCategory> filmCategoryList = new ArrayList<>();
         filmCategoryList.add(testFilmCategory);
 
         when(filmCategoryService.findAll()).thenReturn(filmCategoryList);
-        List<FilmCategory> expected = filmCategoryList;
         List<FilmCategory> actual = filmCategoryController.findAll();
-        Assertions.assertEquals(expected,actual,"The list is incorrect");
+        Assertions.assertEquals(filmCategoryList,actual,"The list is incorrect");
 
     }
 }
