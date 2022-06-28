@@ -27,7 +27,7 @@ public class FilmCategoryTest {
 
     @Test
     public void testSetCategoryId() {
-        FilmCategory testFilmCategory = new FilmCategory(1000,20);
+        FilmCategory testFilmCategory = new FilmCategory(20);
         testFilmCategory.setCategory_id(30);
         Assertions.assertEquals(30,testFilmCategory.getCategory_id(),"ID not changed");
     }
