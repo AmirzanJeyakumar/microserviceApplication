@@ -2,7 +2,6 @@ package com.tsi.amirzan.project;
 import com.tsi.amirzan.project.entity.Actor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 
 public class ActorTest {
@@ -10,16 +9,13 @@ public class ActorTest {
     @Test
     public void testGetActor_id(){
 
-        Actor testActor = new Actor("TestFName","TestLName");
-        testActor.setActor_id(1);
+        Actor testActor = new Actor(1,"TestFName","TestLName");
         Assertions.assertEquals(1, testActor.getActor_id(),"ID not found");
     }
 
     @Test
     public void testSetActor_id(){
-        Actor testActor = new Actor("First","Last");
-        testActor.setActor_id(1);
-        Assertions.assertEquals(1,testActor.getActor_id(),"id not changed");
+        Actor testActor = new Actor(1,"First","Last");
         testActor.setActor_id(2);
         Assertions.assertEquals(2,testActor.getActor_id(),"id not changed");
     }

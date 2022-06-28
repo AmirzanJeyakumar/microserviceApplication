@@ -9,24 +9,20 @@ public class FilmTest {
     @Test
     public void testGetFilm_id(){
 
-        Film testFilm = new Film("qwerty","asdf",2010,3,"PG");
-        testFilm.setFilm_id(1);
+        Film testFilm = new Film(1,"qwerty","asdf",2010,3,"PG");
         Assertions.assertEquals(1, testFilm.getFilm_id(),"ID not found");
     }
 
     @Test
     public void testSetFilm_id(){
-        Film testFilm = new Film("qwerty","asdf",2010,3,"PG");
-        testFilm.setFilm_id(1);
-        Assertions.assertEquals(1,testFilm.getFilm_id(),"id not changed");
+        Film testFilm = new Film(1,"qwerty","asdf",2010,3,"PG");
         testFilm.setFilm_id(2);
         Assertions.assertEquals(2,testFilm.getFilm_id(),"id not changed");
     }
 
     @Test
     public void testGetTitle(){
-        Film testFilm = new Film("qwerty","asdf",2010,3,"PG");
-        testFilm.setFilm_id(1);
+        Film testFilm = new Film(1,"qwerty","asdf",2010,3,"PG");
         Assertions.assertEquals("qwerty",testFilm.getTitle(),"wrong title");
     }
 
