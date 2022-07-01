@@ -30,11 +30,6 @@ public class ActorController {
             return actorService.findById(actor_id);
         }
 
-        @GetMapping("?first_name={first_name}")
-        public List<Actor> findByNameContaining(@PathVariable String first_name){
-            return actorService.findByNameContaining(first_name);
-        }
-
         @DeleteMapping("/{actor_id}")
         public String deleteById(@PathVariable int actor_id) {
             return actorService.deleteById(actor_id) + " Actor deleted from the database";
