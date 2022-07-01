@@ -21,11 +21,6 @@ public class ActorServiceImpl implements ActorService {
         return jdbcTemplate.query("SELECT * FROM actor", new BeanPropertyRowMapper<>(Actor.class));
     }
 
-    @Override
-    public List<Actor> findByNameContaining(String first_name) {
-        String q = "SELECT * from actor WHERE first_name LIKE '%" + first_name + "%'";
-        return jdbcTemplate.query(q, BeanPropertyRowMapper.newInstance(Actor.class));
-    }
 
     @Override
     public Actor findById(int actor_id) {
