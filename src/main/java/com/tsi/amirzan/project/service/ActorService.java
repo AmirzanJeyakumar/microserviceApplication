@@ -7,6 +7,8 @@ import java.util.List;
 public interface ActorService {
     List<Actor> findAll();
 
+    List<Actor> findByNameContaining(String first_name);
+
     Actor findById(int actor_id);
 
      int deleteById(int actor_id);
@@ -14,4 +16,6 @@ public interface ActorService {
      int save(Actor actor);
 
      int update(Actor actor, int actor_id);
+
+
 }

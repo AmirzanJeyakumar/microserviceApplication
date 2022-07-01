@@ -4,9 +4,9 @@ package com.tsi.amirzan.project.entity;
 import lombok.*;
 
 
-@Setter // annotation generates the setter methods //
-@Getter // annotation generates the getter methods //
-@AllArgsConstructor // generates no-arg constructor //
+@Setter
+@Getter
+@AllArgsConstructor
 @NoArgsConstructor
 public class Actor {
 

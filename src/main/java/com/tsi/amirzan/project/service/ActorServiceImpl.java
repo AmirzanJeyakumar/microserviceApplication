@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Repository
+@CrossOrigin
 public class ActorServiceImpl implements ActorService {
 
 
@@ -17,6 +19,12 @@ public class ActorServiceImpl implements ActorService {
     @Override
     public List<Actor> findAll() {
         return jdbcTemplate.query("SELECT * FROM actor", new BeanPropertyRowMapper<>(Actor.class));
+    }
+
+    @Override
+    public List<Actor> findByNameContaining(String first_name) {
+        String q = "SELECT * from actor WHERE first_name LIKE '%" + first_name + "%'";
+        return jdbcTemplate.query(q, BeanPropertyRowMapper.newInstance(Actor.class));
     }
 
     @Override
